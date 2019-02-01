@@ -4,7 +4,7 @@ package main
 const Name string = "dr"
 
 // Version of the application
-const Version string = "0.1.0.alpha"
+const Version string = "0.1"
 
 // License is the short license string
 const License string = `

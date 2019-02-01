@@ -24,7 +24,7 @@ func setUpApplication() *cli.App {
 	app := cli.NewApp()
 	app.Name = Name
 	app.Version = Version
-	app.Author = "Marcos Cela Lopez (Github https://github.com/Markoscl)"
+	app.Author = "Marcos Cela Lopez (Github https://github.com/MarcosCela)"
 	app.Email = "marcos.cela.lopez@gmail.com"
 	app.Usage = "Docker remote CLI utility"
 	app.Copyright = License

@@ -37,7 +37,7 @@ func setUpApplication() *cli.App {
 	return app
 }
 
-// getConfigurationOrFail gets the currently default configuration, and if it is not found or is not parseable, fails
+// getConfigurationOrFail gets the currently default configuration, and if it is not found or is not parsable, fails
 func getConfiguration() config.DrConfig {
 	cfg, e := config.New()
 	if e != nil {

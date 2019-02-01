@@ -1,0 +1,6 @@
+*.test
+dr
+.idea
+go.sum
+registry
+.vscode

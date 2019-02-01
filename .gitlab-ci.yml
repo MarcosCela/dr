@@ -1,0 +1,18 @@
+# Use the golang image that supports go modules
+image: golang:1.11.1-alpine3.7
+
+# Install some required packages
+before_script:
+  - apk add --no-cache make git gcc libc-dev
+
+# The make build target checks code formatting with go fmt, builds the binary, and then runs unit tests
+stages:
+  - build
+
+compile:
+  stage: build
+  script:
+    - make build
+  artifacts:
+    paths:
+      - dr

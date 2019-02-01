@@ -1,0 +1,8 @@
+currentContext: default
+output: json
+contexts:
+- name: default
+  url: http://localhost:5000
+  user: ""
+  pass: ""
+  trusted: true

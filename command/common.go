@@ -53,15 +53,6 @@ func extractImageAndTag(args []string) (string, string) {
 	return image, tag
 }
 
-func choose(ss []string, test func(string) bool) (ret []string) {
-	for _, s := range ss {
-		if test(s) {
-			ret = append(ret, s)
-		}
-	}
-	return
-}
-
 func contextExists(context string, allContexts []config.DrContext) bool {
 	for _, isContext := range allContexts {
 		if isContext.Name == context {

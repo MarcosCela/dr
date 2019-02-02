@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: golang:1.11.1-alpine3.7
+
+    working_directory: ~/repo
+
+    steps:
+      - run: apk add --no-cache make git gcc libc-dev
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "go.mod" }}
+            - v1-dependencies-
+
+      - run: go get
+
+      - save_cache:
+          paths:
+            - /go/pkg/mod/cache
+          key: v1-dependencies-{{ checksum "go.mod" }}
+
+      - run: make build

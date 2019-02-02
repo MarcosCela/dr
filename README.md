@@ -1,8 +1,9 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/MarcosCela/dr/stable/doc/logo.png" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/MarcosCela/dr/stable/doc/logo.png"/>
 </p>
 
 [![LicenseBadge](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://circleci.com/gh/MarcosCela/dr.svg?style=shield)](https://circleci.com/gh/MarcosCela/baker-plugin)
 
 -----------------------------------------------------------------------------
 

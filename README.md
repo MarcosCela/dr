@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Markoscl/dr/stable/doc/logo.png" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/MarcosCela/dr/stable/doc/logo.png" width="200" height="200" />
 </p>
 
 [![LicenseBadge](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)

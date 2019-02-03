@@ -3,7 +3,7 @@ name: Enhancement
 about: Improve an already existing feature
 title: ''
 labels: 'enhancement'
-assignees: 'MarcosCela'
+assignees: ''
 
 ---
 

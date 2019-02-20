@@ -40,3 +40,7 @@ clean: ## Cleans the docker compose testing images
 install: build ## Copy the executable to ${HOME}/bin/dr
 	@cp dr $(HOME)/bin/dr
 	@chmod +x $(HOME)/bin/dr
+
+
+sign: ## Sign the dr binary
+	@gpg --armor --detach-sig dr

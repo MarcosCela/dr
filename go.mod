@@ -1,14 +1,15 @@
 module dr
 
 require (
-	github.com/Sirupsen/logrus v1.0.6 // indirect
 	github.com/appscode/docker-registry-client v0.0.0-20180426080142-1bb02bb202b0
+	github.com/danieljoos/wincred v1.0.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/docker/distribution v0.0.0-20180814190750-9bf62ca7b3fc
 	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7 // indirect
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/franela/goblin v0.0.0-20180624194345-6af5ecb776ce
 	github.com/fsnotify/fsnotify v1.4.7 // indirect
+	github.com/godbus/dbus v4.1.0+incompatible // indirect
 	github.com/golang/protobuf v1.2.0 // indirect
 	github.com/gorilla/context v1.1.1 // indirect
 	github.com/gorilla/mux v1.6.2 // indirect
@@ -20,12 +21,13 @@ require (
 	github.com/onsi/ginkgo v1.6.0 // indirect
 	github.com/onsi/gomega v1.4.1 // indirect
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
-	github.com/opencontainers/image-spec v1.0.1
+	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/sirupsen/logrus v1.0.6 // indirect
-	github.com/stevvooe/resumable v0.0.0-20180830230917-22b14a53ba50 // indirect
+	github.com/stretchr/objx v0.1.1 // indirect
 	github.com/stretchr/testify v1.2.2 // indirect
 	github.com/urfave/cli v1.20.0
+	github.com/zalando/go-keyring v0.0.0-20190208082241-fbe81aec3a07
 	golang.org/x/crypto v0.0.0-20180830192347-182538f80094 // indirect
 	golang.org/x/net v0.0.0-20180826012351-8a410e7b638d // indirect
 	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f // indirect

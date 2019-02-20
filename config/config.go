@@ -32,7 +32,6 @@ type DrContext struct {
 	Name    string `yaml:"name" json:"name"`
 	URL     string `yaml:"url" json:"url"`
 	User    string `yaml:"user" json:"user"`
-	Pass    string `yaml:"pass" json:"pass"`
 	Trusted bool   `yaml:"trusted" json:"trusted"`
 }
 
@@ -68,19 +67,6 @@ var OutputFormatYAML = OutputFormat{
 }
 var validOutputFormats = []OutputFormat{OutputFormatJSON, OutputFormatPLAIN, OutputFormatYAML}
 
-// CensorPasswords censor all sensitive information from the given configuration, such as passwords and other fields
-func (cfg *DrConfig) CensorPasswords() {
-	var censoredContexts []DrContext
-	for _, ctx := range cfg.Contexts {
-		censoredContexts = append(censoredContexts, *ctx.censorPassword())
-	}
-	cfg.Contexts = censoredContexts
-}
-func (ctx *DrContext) censorPassword() *DrContext {
-	ctx.Pass = "---redacted---"
-	return ctx
-}
-
 // GetClient generates a docker registry v2 client, with data from the current context configured by the user
 // passed as metadata
 func GetClient(c *cli.Context) *registry.Registry {
@@ -90,11 +76,16 @@ func GetClient(c *cli.Context) *registry.Registry {
 	}
 
 	currentContext := getCurrentContext(context)
-	hub, err := registry.New(currentContext.URL, currentContext.User, currentContext.Pass)
+	password := getPasswordForContext(currentContext)
+	hub, err := registry.New(currentContext.URL, currentContext.User, password)
 	if err != nil {
 		log.Fatal(err)
 	}
 	return hub
+}
+
+func getPasswordForContext(context DrContext) string {
+	return ""
 }
 
 // getCurrentContext extracts the current context for the user configuration from the CLI context (params etc...)

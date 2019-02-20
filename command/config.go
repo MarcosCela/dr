@@ -14,7 +14,6 @@ func ShowCurrentConfiguration(c *cli.Context) error {
 	if len(currentConfiguration.Contexts) == 0 {
 		return cli.NewExitError("Invalid configuration file. You need at least one context!", errcodes.InvalidContext)
 	}
-	currentConfiguration.CensorPasswords()
 	config.GetJSONPrinter(c).Print(currentConfiguration)
 
 	return nil

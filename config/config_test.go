@@ -37,10 +37,6 @@ func TestConfigurationLoadingFromFile(t *testing.T) {
 			g.Assert(config.Contexts[0].User).Equal("")
 
 		})
-		g.It("Default context has empty password", func() {
-			g.Assert(config.Contexts[0].Pass).Equal("")
-
-		})
 
 	})
 	g.Describe("Check YAML parsing of path that does not exist", func() {

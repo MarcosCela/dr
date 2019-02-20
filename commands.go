@@ -113,6 +113,13 @@ var Commands = []cli.Command{
 		Action:       command.ManifestInfo,
 		BashComplete: command.ManifestInfoAuto,
 	},
+	{
+		Name:         "login",
+		Usage:        "Saves the pasword for a given context in the OS keyring",
+		UsageText:    "dr login <contextName>",
+		Action:       command.Login,
+		BashComplete: command.LoginComplete,
+	},
 }
 
 // CommandNotFound default handler for when a command is not found, with custom exit error

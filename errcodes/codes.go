@@ -39,6 +39,12 @@ const WriteConfigError int = 10
 // InvalidOutputFormat is used when the user selects an output format that is not valid
 const InvalidOutputFormat int = 11
 
+// TerminalReadError is used when the user needs to input some data from the terminal and any kind of I/O related error happens
+const TerminalReadError int = 12
+
+// KeyringError signals any kind of error that happened when saving a password to the terminal
+const KeyringError int = 13
+
 // pre-built errors
 
 var TemplateDisplayError = cli.NewExitError("There was an unexpected error when showing output to terminal", templateDisplayError)

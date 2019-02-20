@@ -5,8 +5,10 @@ import (
 	"dr/errcodes"
 	"dr/printer"
 	"errors"
+	"fmt"
 	"github.com/appscode/docker-registry-client/registry"
 	"github.com/urfave/cli"
+	"github.com/zalando/go-keyring"
 	"gopkg.in/yaml.v2"
 	"io"
 	"io/ioutil"
@@ -78,14 +80,20 @@ func GetClient(c *cli.Context) *registry.Registry {
 	currentContext := getCurrentContext(context)
 	password := getPasswordForContext(currentContext)
 	hub, err := registry.New(currentContext.URL, currentContext.User, password)
+
 	if err != nil {
-		log.Fatal(err)
+		_, _ = fmt.Fprintln(os.Stderr, err.Error())
 	}
 	return hub
 }
 
 func getPasswordForContext(context DrContext) string {
-	return ""
+	// get password
+	secret, err := keyring.Get(context.Name, context.User)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return secret
 }
 
 // getCurrentContext extracts the current context for the user configuration from the CLI context (params etc...)

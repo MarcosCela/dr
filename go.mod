@@ -28,7 +28,7 @@ require (
 	github.com/stretchr/testify v1.2.2 // indirect
 	github.com/urfave/cli v1.20.0
 	github.com/zalando/go-keyring v0.0.0-20190208082241-fbe81aec3a07
-	golang.org/x/crypto v0.0.0-20180830192347-182538f80094 // indirect
+	golang.org/x/crypto v0.0.0-20180830192347-182538f80094
 	golang.org/x/net v0.0.0-20180826012351-8a410e7b638d // indirect
 	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f // indirect
 	golang.org/x/sys v0.0.0-20180821140842-3b58ed4ad339 // indirect

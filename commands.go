@@ -12,7 +12,6 @@ import (
 
 var outputFlag = cli.StringFlag{
 	Name:  "output, o",
-	Value: config.JSONOutputFormat,
 	Usage: "output format for all commands [json, plain]",
 }
 

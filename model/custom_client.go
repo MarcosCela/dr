@@ -57,9 +57,6 @@ func (client defaultCustomClient) Repositories() (imageList DockerImageList, err
 func (client defaultCustomClient) Manifest(image string, tag string) (manifest ManifestInformation, error error) {
 	imageManifest, e := client.registry.ManifestV2(image, tag)
 	if e != nil {
-		return
-	}
-	if e != nil {
 		return ManifestInformation{}, cli.NewExitError("Error when getting the manifest: "+e.Error(), errcodes.CannotRetrieveManifest)
 	}
 	return WrapManifestInfo(client.RegistryUrl(), image, tag, imageManifest), nil

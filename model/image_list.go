@@ -33,6 +33,12 @@ func (printer DockerImageList) PrintPlain(printable interface{}, options PrintOp
 	if !ok {
 		return errcodes.NotImplementedError
 	}
+	// If we do not include tags, we can end up with a lot of images
+	// for different tags. Ensure that in this case, we do not
+	// print a lot of lines for images that only differ on tag (since we are not showing it!)
+	if !options.IncludeTags {
+		dockerImageList.Images = removeDuplicatedEntries(dockerImageList.Images)
+	}
 	return template.Must(template.New("list-repository-images").
 		Parse(templates.ImageListPlain)).
 		Execute(options.Writer, ImageListTemplate{
@@ -40,6 +46,24 @@ func (printer DockerImageList) PrintPlain(printable interface{}, options PrintOp
 			IncludeRepository: options.IncludeRegistry,
 			IncludeTag:        options.IncludeTags,
 		})
+}
+
+/* removeDuplicatedEntries filters the given slice, based only the name of the docker image, and ignoring the tag.
+This means that if two images are only different on the tag, only one of them will be included.
+*/
+func removeDuplicatedEntries(images []DockerImage) (result []DockerImage) {
+	// Use  a map to record duplicates as we find them
+	encountered := map[string]bool{}
+	for v := range images {
+		if encountered[images[v].Name] == true {
+			// Do not add the duplicate value
+		} else {
+			encountered[images[v].Name] = true
+			// Append the result slice
+			result = append(result, images[v])
+		}
+	}
+	return result
 }
 
 func (printer DockerImageList) PrintYaml(printable interface{}, options PrintOptions) error {

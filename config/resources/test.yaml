@@ -4,4 +4,3 @@ contexts:
 - name: default
   url: http://localhost:5000
   user: ""
-  trusted: true

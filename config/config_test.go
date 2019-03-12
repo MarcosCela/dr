@@ -25,10 +25,6 @@ func TestConfigurationLoadingFromFile(t *testing.T) {
 			g.Assert(config.CurrentContext).Equal("default")
 
 		})
-		g.It("Default context is trusted", func() {
-			g.Assert(config.Contexts[0].Trusted).Equal(true)
-
-		})
 		g.It("Default context has valid URL", func() {
 			g.Assert(config.Contexts[0].URL).Equal("http://localhost:5000")
 

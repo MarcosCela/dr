@@ -29,7 +29,6 @@ contexts:
   - name: default
     user: myuser
     url: http://my.domain.com:1234/repo
-    trusted: true
 currentContext: default
 ```
 
@@ -47,7 +46,6 @@ contexts:
   - name: default
     user: myuser
     url: http://my.domain.com:1234/repo
-    trusted: true
   - name: production
     user: admin
     url: https://my-secure.domain:1337/prod
@@ -90,5 +88,4 @@ contexts:
 - name: default
   url: http://localhost:5000
   user: ""
-  trusted: true
 ```

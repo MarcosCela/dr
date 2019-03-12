@@ -31,10 +31,9 @@ const (
 
 // DrContext contains all the necessary data to contact a given docker registry
 type DrContext struct {
-	Name    string `yaml:"name" json:"name"`
-	URL     string `yaml:"url" json:"url"`
-	User    string `yaml:"user" json:"user"`
-	Trusted bool   `yaml:"trusted" json:"trusted"`
+	Name string `yaml:"name" json:"name"`
+	URL  string `yaml:"url" json:"url"`
+	User string `yaml:"user" json:"user"`
 }
 
 // DrConfig contains all available configuration data for the application

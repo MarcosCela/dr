@@ -3,7 +3,7 @@
 </p>
 
 [![LicenseBadge](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![CircleCI](https://circleci.com/gh/MarcosCela/dr.svg?style=shield)](https://circleci.com/gh/MarcosCela/baker-plugin)
+[![CircleCI](https://circleci.com/gh/MarcosCela/dr.svg?style=shield)](https://circleci.com/gh/MarcosCela/dr)
 
 -----------------------------------------------------------------------------
 
